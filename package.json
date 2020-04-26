@@ -1,0 +1,56 @@
+{
+  "name": "express-api-ts",
+  "version": "1.0.0",
+  "description": "A simple api using express and typescript",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --config \"./util/nodemon.json\"",
+    "start:prod": "cross-env NODE_ENV=production node -r ./env -r module-alias/register ./dist/start.js",
+    "start:docker": "cross-env NODE_ENV=production node -r module-alias/register ./dist/start.js",
+    "build": "node ./util/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alcalawil/express-api-ts.git"
+  },
+  "keywords": [
+    "api",
+    "express",
+    "node",
+    "typescript",
+    "ts"
+  ],
+  "author": "alcalawil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alcalawil/express-api-ts/issues"
+  },
+  "homepage": "https://github.com/alcalawil/express-api-ts#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "module-alias": "^2.2.2",
+    "morgan": "^1.10.0",
+    "tslib": "^1.11.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "@types/morgan": "^1.9.0",
+    "@types/node": "^13.13.4",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "fs-extra": "^9.0.0",
+    "ts-node": "^8.9.1",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.8.3"
+  },
+  "_moduleAliases": {
+    "@src/*": "dist/*.ts",
+    "@types": "dist/@types",
+    "@config": "dist/config",
+    "@shared": "dist/shared",
+    "@middlewares": "dist/middlewares"
+  }
+}
