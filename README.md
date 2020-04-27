@@ -1,4 +1,5 @@
 # Express + Typescript API
+A simple api template using express + typescript
 
 ### Usage Dev
 
