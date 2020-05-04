@@ -1,5 +1,4 @@
-# Express + Typescript API
-A simple api template using express + typescript
+# Payment microservice for Venezuela
 
 ### Usage Dev
 

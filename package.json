@@ -1,7 +1,7 @@
 {
-  "name": "express-api-ts",
+  "name": "payment-ms-ve",
   "version": "1.0.0",
-  "description": "A simple api using express and typescript",
+  "description": "Payment microservice for Venezuela",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --config \"./util/nodemon.json\"",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/alcalawil/express-api-ts#readme",
   "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "module-alias": "^2.2.2",
@@ -51,6 +52,8 @@
     "@types": "dist/@types",
     "@config": "dist/config",
     "@shared": "dist/shared",
-    "@middlewares": "dist/middlewares"
+    "@middlewares": "dist/middlewares",
+    "@controllers": "dist/controllers",
+    "@services": "dist/services"
   }
 }

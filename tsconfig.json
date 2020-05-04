@@ -74,7 +74,9 @@
       "@types": ["src/@types"],
       "@config": ["src/config"],
       "@shared": ["src/shared"],
-      "@middlewares": ["src/middlewares"]
+      "@middlewares": ["src/middlewares"],
+      "@controllers": ["src/controllers"],
+      "@services": ["src/services"]
     },
     "types": ["node"],
     "typeRoots": ["node_modules/@types"]

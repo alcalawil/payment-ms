@@ -3,3 +3,5 @@ export interface IHTTPError {
   message: string;
   customCode?: number;
 }
+
+export interface IPaypalCreateOrderOptions {}
