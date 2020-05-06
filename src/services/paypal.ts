@@ -21,7 +21,7 @@ export class PaypalService {
           {
             amount: {
               currency_code: "USD",
-              value: "5.00",
+              value: options.amount,
             },
           },
         ],

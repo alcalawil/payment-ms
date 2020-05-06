@@ -12,11 +12,6 @@
       // Required. Replace SB_CLIENT_ID with your sandbox client ID.
     </script>
     <h1>Store</h1>
-
-    <a href="/buy">
-      <button>BUY</button>
-    </a>
-
     <div id="paypal-buttons"></div>
     <script>
       paypal
@@ -28,7 +23,7 @@
                 "content-type": "application/json",
               },
               body: JSON.stringify({
-                someId: "sfwsfw3224t35",
+                amount: 1.5,
               }),
             })
               .then(function (res) {

@@ -4,4 +4,6 @@ export interface IHTTPError {
   customCode?: number;
 }
 
-export interface IPaypalCreateOrderOptions {}
+export interface IPaypalCreateOrderOptions {
+  amount: number;
+}

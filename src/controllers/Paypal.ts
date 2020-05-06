@@ -17,7 +17,11 @@ export class PaypalController extends BaseController {
 
   createOrder = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const order = await this.paypalService.createOrder({});
+      const { amount }: { amount: number } = req.body;
+      if (!amount) {
+        return res.status(400).json({ error: "amount is required" });
+      }
+      const order = await this.paypalService.createOrder({ amount });
       res.status(201).json({
         orderId: order.result.id,
       });
