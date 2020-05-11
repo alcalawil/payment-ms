@@ -1,8 +1,9 @@
 import http from "http";
 import { app } from "./app";
 import { logger } from "@shared";
+import { config } from "@config";
 
-const port = Number(process.env.PORT || 3000);
+const port = config.serverPort;
 
 const server = http.createServer(app);
 server.listen(port);

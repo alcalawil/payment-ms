@@ -27,5 +27,4 @@ if (config.nodeEnv === "development") {
   });
 }
 
-logger.debug("", app.stack);
 export { app };
