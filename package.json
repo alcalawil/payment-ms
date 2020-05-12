@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --config \"./util/nodemon.json\"",
-    "start:prod": "cross-env NODE_ENV=production node -r ./env -r module-alias/register ./dist/start.js",
-    "start:docker": "cross-env NODE_ENV=production node -r module-alias/register ./dist/start.js",
+    "start:prod": "node -r module-alias/register ./dist/start.js",
     "build": "node ./util/build.js"
   },
   "repository": {

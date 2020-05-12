@@ -14,8 +14,8 @@
 
 ### Docker
 
-- `docker build -t express-api-ts:1.0.0 .`
-- `docker run -it -d --env-file ./env/production.env -p 3000:3000 express-api-ts:1.0.0`
+- `docker build -t payment-ms-ve:1.0.0 .`
+- `docker run -it -d --env-file ./env/production.env -p 3000:3000 payment-ms-ve:1.0.0`
 
 ### REST Client
 
@@ -27,7 +27,7 @@ curl --request GET \
 
 ### TODO:
 
-- Fix Dockerfile (post compile error)
+- Create a tsconfig-prod.json
 - Add production logger transport (winston)
 - Add eslint config
 - Add mongodb connection

@@ -1,40 +1,23 @@
-# --- Installing stage
-FROM node:12.14.1 AS installer
-
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install
-
-# ---
 
 # Building stage
-FROM installer AS builder
-
-## Workdir is shared between the stage so let's reuse it as we neeed the packages
+FROM node:12.14.1 AS builder
 WORKDIR /app
-
-COPY ./src /app/src
+COPY ./src ./src
+# TODO: Use tsconfig-prod.json
 COPY tsconfig.json .
-COPY ./util/build.js  /app/util/build.js
-COPY package*.json /app/
-
+COPY ./util/build.js  ./util/build.js
+COPY package*.json ./
+RUN npm install
 RUN npm run build
-
-RUN npm install --production
 # ---
 
-# Running code under slim image (production part mostly)
+# production stage
+
 FROM node:12.14.1-alpine
-
-## New clean directory
 WORKDIR /app
-## We just need the build and package to execute the command
-COPY --from=builder /app/dist /app/dist/
-COPY --from=builder /app/node_modules /app/node_modules
-COPY package*.json /app/
-
+COPY --from=builder ./app/dist ./dist
+COPY package*.json ./
+RUN npm install --production
 USER node
-
-CMD [ "npm", "run", "start:docker" ]
+ENV NODE_ENV production
+CMD [ "npm", "run", "start:prod" ]
