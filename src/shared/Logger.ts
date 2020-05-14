@@ -8,10 +8,8 @@ const winstonLogger = createLogger({
   level: config.logLevel,
 });
 
-/**
- * For production write to all logs will go to AWS CloudWatch
- **/
-if (config.nodeEnv === "development") {
+if (config.nodeEnv === "development" || config.nodeEnv === "production") {
+  // use development log until prod logger is finished
   const errorStackFormat = format((info) => {
     if (info.stack) {
       // tslint:disable-next-line:no-console
