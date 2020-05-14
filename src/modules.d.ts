@@ -7,5 +7,6 @@ declare namespace NodeJS {
     SERVER_API_KEY?: string;
     PAYPAL_ID?: string;
     PAYPAL_SECRET?: string;
+    USE_SANDBOX?: string;
   }
 }

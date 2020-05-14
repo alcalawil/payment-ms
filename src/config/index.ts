@@ -14,10 +14,11 @@ const config = {
   paypal: {
     clientId: ENV.PAYPAL_ID,
     clientSecret: ENV.PAYPAL_SECRET,
-    useSandbox: false,
+    useSandbox: ENV.USE_SANDBOX === "FALSE" ? false : true,
   },
 };
 
+console.log(`NODE_ENV: ${config.nodeEnv}`);
 console.log(`Using Sandbox Paypal: ${config.paypal.useSandbox}`);
 
 export { config };
