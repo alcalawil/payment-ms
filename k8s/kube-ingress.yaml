@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: payment-ing
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: payment-service
+          servicePort: 3001

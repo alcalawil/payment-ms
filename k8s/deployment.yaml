@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-deployment
+  labels:
+    app: payment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: payment
+  template:
+    metadata:
+      labels:
+        app: payment
+    spec:
+      containers:
+      - name: payment-ms-ve
+        image: payment-ms-ve:1.0.0
+        env:
+        - name: PORT
+          value: "3000"
+        - name: PAYPAL_ID
+          value: "_"
+        - name: PAYPAL_SECRET
+          value: "_"
+        - name: USE_SANDBOX
+          value: "TRUE"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
