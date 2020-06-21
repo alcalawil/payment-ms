@@ -6,16 +6,13 @@
 - Create file `./env/development.env`
 - `npm start`
 
-### Usage Prod
-
-- `npm i --production`
-- Create file `./env/production.env`
-- `npm start`
 
 ### Docker
 
-- `docker build -t payment-ms-ve:1.0.0 .`
-- `docker run -it -d --env-file ./env/production.env -p 3000:3000 payment-ms-ve:1.0.0`
+- `docker build -t payment-ms:1.0.0 .`
+- `docker run -it -d --env-file ./env/production.env -p 3000:3000 payment-ms:1.0.0`
+- To copy into minikube `docker save payment-ms:1.0.0 | (eval $(minikube docker-env) && docker load)`
+
 
 ### REST Client
 

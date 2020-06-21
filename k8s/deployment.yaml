@@ -5,7 +5,7 @@ metadata:
   labels:
     app: payment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: payment
@@ -15,17 +15,11 @@ spec:
         app: payment
     spec:
       containers:
-      - name: payment-ms-ve
-        image: payment-ms-ve:1.0.0
-        env:
-        - name: PORT
-          value: "3000"
-        - name: PAYPAL_ID
-          value: "_"
-        - name: PAYPAL_SECRET
-          value: "_"
-        - name: USE_SANDBOX
-          value: "TRUE"
+      - name: payment
+        image: payment-ms:1.0.0
+        envFrom:
+          - configMapRef:
+              name: env-vars
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000

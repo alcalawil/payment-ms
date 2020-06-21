@@ -9,4 +9,4 @@ spec:
       - path: /
         backend:
           serviceName: payment-service
-          servicePort: 3001
+          servicePort: 3000

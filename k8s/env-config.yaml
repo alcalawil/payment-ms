@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-config
+data:
+  PORT: "3000"
+  PAYPAL_ID: "Aejdf6BtYxO8_X7cTs2vqyJbWAI_g6ars0e_0OQtzEz5W8Wfk_7yZzNzxvg2Fjd75k78C9_sCVaWGDOI"
+  PAYPAL_SECRET: "ECoet-abl7x6VKnOW3ebTYWJDdvfOn3fZY3Ej03lBATKw-96E3mRfta5HxHa7neHc6spcZdzgAxDhian"
+  USE_SANDBOX: "TRUE"
