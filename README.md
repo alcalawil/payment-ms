@@ -11,7 +11,7 @@
 
 - `docker build -t payment-ms:1.0.0 .`
 - `docker run -it -d --env-file ./env/production.env -p 3000:3000 payment-ms:1.0.0`
-- To copy into minikube `docker save payment-ms:1.0.0 | (eval $(minikube docker-env) && docker load)`
+- To copy into minikube `docker save payment-ms:1.0.2 | (eval $(minikube docker-env) && docker load)`
 
 
 ### REST Client

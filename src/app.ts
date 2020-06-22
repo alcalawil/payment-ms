@@ -19,12 +19,8 @@ app
   .use(`/${apiVersion}/paypal`, paypalRouter)
   .use(errorHandler);
 
-if (config.nodeEnv === "development") {
-  // Use an example view to test the workflow
-  app.use("/", express.static(path.join(__dirname, "..", "public")));
-  app.get("/", (req, res) => {
-    res.redirect("/index.html");
-  });
-}
+app.get("/", (req, res) => {
+  res.json({ message: 'Payment microservice', apiVersion });
+});
 
 export { app };

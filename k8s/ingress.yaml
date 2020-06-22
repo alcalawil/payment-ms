@@ -1,12 +1,21 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: payment-ing
+  name: backend-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
   - http:
       paths:
-      - path: /
+      - path: /payment/(.*)
+        pathType: Prefix
         backend:
           serviceName: payment-service
+          servicePort: 3000
+      - path: /address/(.*)
+        pathType: Prefix
+        backend:
+          serviceName: address-service
           servicePort: 3000
